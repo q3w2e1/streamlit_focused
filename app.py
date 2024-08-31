@@ -7,6 +7,18 @@ from bokeh.plotting import figure
 st.title("Bokeh on Streamlit")
 st.markdown("Upload your .parquet files to visualize them.")
 
+st.markdown("""
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    .reportview-container .main .block-container{padding-top: 0rem;}
+    header {visibility: hidden;}
+    div[role="progressbar"] {
+        visibility: hidden;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
 # File Upload
 uploaded_file = st.file_uploader("Choose a Parquet file", type="parquet")
 if uploaded_file is not None:
